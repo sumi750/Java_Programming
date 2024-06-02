@@ -62,6 +62,7 @@ public class BasicPattern {
         }
         System.out.println();
     }
+    sc.close();
     
 
     }

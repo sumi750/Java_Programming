@@ -34,6 +34,7 @@ public class Java5Ary {
 
 
         // linear search
+        sc.close();
         
     }
 }

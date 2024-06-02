@@ -1,5 +1,4 @@
 import java.util.*;
-import java.lang.Math.*;
 public class SubArray_sum {
 
 
@@ -79,5 +78,6 @@ public class SubArray_sum {
 
         int arr2[] = {2,4,6,8,10};
         kadn(arr2);
+        sc.close();
      }
 }

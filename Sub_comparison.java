@@ -10,5 +10,6 @@ public class Sub_comparison{
             // divides the substrings
             s = s.substring(k);
             System.out.println(s);
+            sc.close();
         }
 }

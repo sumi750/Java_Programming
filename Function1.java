@@ -57,5 +57,7 @@ public class Function1 {
 
         System.out.println("Binomal cofficient is " + fact/((fact_r)*rem));
 
+        sc.close();
+
     }
 }

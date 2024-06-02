@@ -15,5 +15,6 @@ public class Reverse {
         }
         System.out.println("the reverse numberi is " + reverse);
 
+        sc.close();
     }
 }

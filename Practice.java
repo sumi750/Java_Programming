@@ -108,6 +108,8 @@ public class Practice {
             System.out.printf("%-15s%03d",s1,x);
         }
         System.out.println("====================");
+
+        sc.close();
         
     }
 }

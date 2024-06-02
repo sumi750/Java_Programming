@@ -19,6 +19,7 @@ public class JavaPrc {
 
         System.out.println("Sum of the digit is "+ sum);
         System.out.println("cout of the digit is  "+ cnt);
+        sc.close();
 }
     
 }

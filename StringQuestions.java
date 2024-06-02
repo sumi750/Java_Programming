@@ -42,6 +42,7 @@ public class StringQuestions {
         // else{
         //     System.out.println("Strings are not palindorme");
         // }
+        sc.close();
 
     }
     
