@@ -63,7 +63,29 @@ public class loop {
             fact = fact*i;
         }
         System.out.println("Factorial of "+ m + "is " + fact);
-        sc.close();
+
+        // Keep etner the number till users enter multiple of 10
+        do{
+            System.out.println("Enter your number");
+            int z = sc.nextInt();
+            if(z % 10 == 0){
+                System.out.println("Loop End");
+                break;
+            }
+            System.out.println(z);
+        }while(true);
+
+        // Display all numbers entered by user except multi of 10
+        do{
+            System.out.println("Enter the number");
+            int y = sc.nextInt();
+
+            if( y%10 == 0){
+                continue;
+            }
+            System.out.println("The number was "+ y);
+        }while(true);
+    // sc.close();
     }
     
 }
