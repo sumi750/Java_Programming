@@ -9,7 +9,7 @@ public class Reverse {
         int reminder;
         while(number!=0){
             // number = number%10;
-            reminder = number % 10;
+            reminder = number % 10;   // last digit = reminder
             reverse = reverse*10 + reminder;
             number/=10;
         }
