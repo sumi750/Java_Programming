@@ -10,7 +10,8 @@ public class Java5Ary {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the value of arrays");
-        int[] marks  = new int[10];
+        // Creating of Array
+        int marks[] = new int[10];
 
         // taking input
         for(int i=0; i<10; i++){

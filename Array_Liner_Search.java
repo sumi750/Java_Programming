@@ -31,13 +31,13 @@ public class Array_Liner_Search {
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in)){
         int number[] = {89,45,25,3,6,78,14,58};
-        int key = 4;
+        int key = sc.nextInt();
         int index = liner(number, key);
         if(index == -1){
             System.out.println("not in class");
         }
         else{
-            System.out.println("in Class");
+            System.out.println("in Class index is "+ index );
         }
 
         // Largest In Array
