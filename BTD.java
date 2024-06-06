@@ -5,10 +5,10 @@ public class BTD {
         int pow = 0;
         int decNum = 0;
         while(BinDec>0){
-            int Ld = BinDec%10; // for last degit
+            int Ld = BinDec%10; // for last degit  -->remenider
             decNum = decNum + (Ld*(int)Math.pow(2, pow)); // type casting bcoz pow return double value but we need int 
             pow++;
-            BinDec = BinDec/10;
+            BinDec/=10;
         }
         System.out.println("decimal of binray number " + myNum + " is equal to " + decNum);
     }
@@ -21,7 +21,7 @@ public class BTD {
             int LastD = n % 2;
             Binform = Binform + (LastD*(int)Math.pow(10, poww));
             poww++;
-            n = n/2;
+            n/=2;
         }
         System.out.println("the Binary value of Decimal Number " + myDec + " is equal to " + Binform);
     }
