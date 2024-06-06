@@ -9,31 +9,19 @@ public class BioCofe {
         return f;
     }
 
-    public static int bioCoeff(int x , int y){
-        int a = facto(x);
-        int b = facto(y);
-        int nmr = facto(x-y);
-
-        int ncr = a/(b*nmr);
-        return ncr;
-    }
-
     public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of N ");
+        int n = sc.nextInt();
+        int fact_n = facto(n);
+        System.out.print("Enter the value of r ");
+        int r = sc.nextInt();
+        int facto_r = facto(r);
+        int facto_n_r = facto(n-r);
+        System.out.print("Binomial COffiecnt of N and R " + fact_n/(facto_n_r*facto_r));
 
-        try(Scanner sc = new Scanner(System.in)){
-            System.out.print("Enter the value of N :  ");
-            int n = sc.nextInt();
-            int fact = facto(n);
-            System.out.println("the value of n factorail is " + fact);
+        sc.close();
 
-            System.out.print("enter the value of X : ");
-            int x = sc.nextInt();
-            System.out.print("enter the value of Y : ");
-            int y = sc.nextInt();
-            int BC = bioCoeff(x, y);
-            System.out.println("the value of bio - coffiecent " + BC);
-            
-        }
     }
     
 }
