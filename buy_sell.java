@@ -22,7 +22,7 @@ public class buy_sell {
         int arr[] = {7,1,5,3,6,4};
 
         System.out.println(buysell(arr));
-        // profit = selling price - buy price
+        // profit = selling price - buy price(positive)
 
     }
     

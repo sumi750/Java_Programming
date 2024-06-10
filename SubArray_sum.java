@@ -35,7 +35,7 @@ public class SubArray_sum {
     }
 
 
-    // Kadane's Algorithm
+    // Kadane's Algorithm : efficent way for subarray sum 
     /* if currcum has negative value considered as 0*/
     public static void kadn(int arr2[]){
 
