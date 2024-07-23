@@ -3,6 +3,7 @@ public class validP {
     public static boolean vaildOrNot(String s){
         String regex = "[^A-Za-z0-9]";
         s = s.toLowerCase().replaceAll(regex, "");
+        System.out.println(s);
         int i = 0;
         int l = s.length()-1;
         while(i<l){
