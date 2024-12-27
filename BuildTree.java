@@ -62,7 +62,7 @@ public class BuildTree {
         }
 
 
-        //Level Order Traversal
+        //Level Order Traversal (LeetCode)
         public static void LevelOrder(Node root){
             if(root ==  null){
                 return;
@@ -119,18 +119,25 @@ public class BuildTree {
             return lsum + rsum + root.data;
         }
 
-        //Largest element in ecah row
-
+        //Largest element in ecah row (LeetCode)
         public static void largestValue(Node root){
             if(root == null){
                 return;
             }
             Queue<Node> q = new LinkedList<>();
-            
-            
+            q.add(root);
+            while(!q.isEmpty()){
+                int size = q.size();
+                int max = Integer.MIN_VALUE;
+                for(int i = 0; i<size; i++){
+                    Node curr = q.remove();
+                    if(curr.left != null) q.add(curr.left);
+                    if(curr.right != null) q.add(curr.right);
+                    max = Math.max(max, curr.data);
+                }
+                System.out.println(max);
+            }   
         }
-
-
     }
 
 
@@ -151,6 +158,8 @@ public class BuildTree {
         System.out.println("Height of Tree : " + tree.heightT(root));
         System.out.println("Count of Node " + tree.nodeCount(root));
         System.out.println("Sum of nodes " + tree.sum(root));
+        System.out.println("Largest element in each row ");
+        tree.largestValue(root);
     }
     
 }
