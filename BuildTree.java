@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BuildTree {
     static class Node{
@@ -138,12 +136,75 @@ public class BuildTree {
                 System.out.println(max);
             }   
         }
+
+        //DiaMeter of Tree T.C (O(N^2))
+        public static int diameter(Node root){
+            if(root == null) {return 0;}
+
+            int leftDiam = diameter(root.left);
+            int leftHeight = heightT(root.left);
+            int rightDiam = diameter(root.right);
+            int rightHeight = heightT(root.right);
+
+            int selfDiam = leftHeight + rightHeight + 1;
+
+            return Math.max(selfDiam, Math.max(rightDiam, leftDiam));
+        }
+
+        //DiaMeter of Tree T.C ---> Liner
+        //Info Class
+        static class Info{
+            int diam;
+            int ht;
+            public Info(int diam, int ht){
+                this.diam = diam;
+                this.ht = ht;
+            }
+        }
+        
+        public static Info diamMeter(Node root){
+
+            if(root == null){
+                return new Info(0,0);
+            }
+            Info leftInfo = diamMeter(root.left);
+            Info rightInfo = diamMeter(root.right);
+            
+            int diam = Math.max(Math.max(leftInfo.diam, rightInfo.diam), leftInfo.ht + rightInfo.ht + 1);
+            int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
+            
+            return new Info(diam,ht);   //returning new object with diam and height
+
+        }
+
+        //Reverse Level Order traversal
+        public static void  ReverseOrder(Node root){
+            if(root == null) {
+                return;
+            }
+
+            Stack<Node> st = new Stack<>();
+            Queue<Node> q = new LinkedList<>();
+
+            q.add(root);
+            while(!q.isEmpty()){
+                Node curr = q.poll();
+                st.push(curr);
+
+                if(curr.left != null) q.add(curr.left);
+                if(curr.right != null) q.add(curr.right);
+            }
+
+            while(!st.isEmpty()){
+                System.out.print(st.pop().data + " ");
+            }
+        }
     }
 
 
 
     public static void main(String[] args) {
-        int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+        int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,2,-1,-1};
         BTree tree = new BTree();
         Node root = tree.buildTree(nodes);
         System.out.println("Pre Order Traversal");
@@ -160,6 +221,10 @@ public class BuildTree {
         System.out.println("Sum of nodes " + tree.sum(root));
         System.out.println("Largest element in each row ");
         tree.largestValue(root);
+        System.out.println("Diameter of tree is " + tree.diameter(root));
+        System.out.println("Diameter of tree using Liner complexity "+ tree.diamMeter(root).diam);
+        System.out.println("Reeverse level order tarversla");
+        tree.ReverseOrder(root);
     }
     
 }
