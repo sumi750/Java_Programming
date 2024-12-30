@@ -199,6 +199,23 @@ public class BuildTree {
                 System.out.print(st.pop().data + " ");
             }
         }
+
+        //Kth level of Tree
+        public static void KthLevel(Node root, int level, int k){
+            if(root == null){
+                return;
+            }
+
+            if(level == k){
+                System.out.print(root.data+ " ");
+                return;
+            }
+
+            KthLevel(root.left, level+1, k);
+            KthLevel(root.right, level+1, k);
+        }
+
+        //Sum of Kth level root
     }
 
 
@@ -225,6 +242,12 @@ public class BuildTree {
         System.out.println("Diameter of tree using Liner complexity "+ tree.diamMeter(root).diam);
         System.out.println("Reeverse level order tarversla");
         tree.ReverseOrder(root);
+        System.out.println();
+        int k = 2;
+        System.out.print("let level is "+ k + " show the node are ");
+        tree.KthLevel(root, 0, k);
+        System.out.println();
+
     }
     
 }
