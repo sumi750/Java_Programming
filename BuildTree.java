@@ -216,6 +216,49 @@ public class BuildTree {
         }
 
         //Sum of Kth level root
+        public static int KthLevelSum(Node root, int level, int k ){
+            if(root == null){
+                return 0;
+            }
+
+            if(level == k){
+                return root.data;
+            }
+
+            return KthLevelSum(root, level+1, k) + KthLevelSum(root.right, level+1, k);
+        }
+
+        // level of Maximum sum of Binary Tree
+        public static int maxLevelSum(Node root){
+            if(root == null){
+                return 0;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            int ans = 1;
+            int level = 1;
+            int maxSum = root.data;
+
+            while(!q.isEmpty()){
+                int levelSum = 0;
+                int size = q.size();
+                for(int i = 0; i<size; i++){
+                    Node curr = q.remove();
+                    levelSum += curr.data;
+                    if(curr.left != null) q.add(curr.left);
+                    if(curr.right != null) q.add(curr.right);
+                }
+
+                if(levelSum>maxSum){
+                    maxSum = levelSum;
+                    ans = level;
+                }
+
+                level++;
+            }
+            return ans;
+        }
     }
 
 
@@ -247,6 +290,10 @@ public class BuildTree {
         System.out.print("let level is "+ k + " show the node are ");
         tree.KthLevel(root, 0, k);
         System.out.println();
+        int sum = tree.KthLevelSum(root, 0, k);
+        System.out.println(sum);
+
+        System.out.println("Level of Maximum sum is "+ tree.maxLevelSum(root));
 
     }
     
