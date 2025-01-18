@@ -28,6 +28,21 @@ public class Array_Liner_Search {
         return minimum;
     }
 
+    public static void largesSmall(int[] arr){
+        int max = arr[0];
+        int min = arr[0];
+        for(int i = 1; i<arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        System.out.println("Max value is " + max);
+        System.out.println("Min value is "+ min);
+    }
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in)){
         int number[] = {89,45,25,3,6,78,14,58};
@@ -44,6 +59,7 @@ public class Array_Liner_Search {
         int numbers[] = {45,98,74,25,101,98,10};
         System.out.println("the largest number is array is : " + largestint(numbers));
         System.out.println("the smallest number is : " + minint(numbers));
+        largesSmall(numbers);
     }
     }
 }

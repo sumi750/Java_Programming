@@ -228,7 +228,7 @@ public class BuildTree {
             return KthLevelSum(root, level+1, k) + KthLevelSum(root.right, level+1, k);
         }
 
-        // level of Maximum sum of Binary Tree
+        // level of Maximum sum of Binary Tree (LeetCode)
         public static int maxLevelSum(Node root){
             if(root == null){
                 return 0;
